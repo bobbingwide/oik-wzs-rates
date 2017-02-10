@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Weight zone shipping rates shortcode
- * Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-wzs-rates
- * Description: Weight zone shipping for WooCommerce 2.6
+ * Plugin URI: http://www.oik-plugins.com/oik-plugins/weight-zone-shipping-rates-shortcode/
+ * Description: Weight zone shipping rates shortcode
  * Version: 0.0.0
  * Author: bobbingwide
  * Author URI: http://www.oik-plugins.com/author/bobbingwide
@@ -75,9 +75,8 @@ function oik_wzs_oik_loaded() {
 }
 
 /**
- * Implement "oik_add_shortcodes" for oik-weight-zone-shipping
+ * Implement "oik_add_shortcodes" for oik-wzs-rates
  * 
- * Assumes that oik IS loaded, though any routine could invoke this action.
  */
 function oik_wzs_oik_add_shortcodes() {
 	bw_add_shortcode( "rates", "oik_wzs_rates", oik_path( "shortcodes/oik-wzs-rates.php", "oik-wzs-rates" ), false );
