@@ -67,12 +67,25 @@ class OIK_Weight_Zone_Shipping_Rates {
 	}
 	
 	/**
+	 * Load libs
+	 * 
+	 * We need to load "bobbforms" in order to be able to use bw_tablerow.
+	 * 
+	 */
+	function load_libs() {
+		$bobbforms = oik_require_lib( "bobbforms" );
+		bw_trace2( $bobbforms, "bobbforms", false );
+		return( $bobbforms );
+	}
+	
+	/**
 	 * Displays the shipping rates for the method
 	 * 
 	 * @param array $rates 
 	 
 	 */
 	function display_rates( $rates ) {
+		$this->load_libs();
 		//e( print_r( $rates, true ) );
 		stag( "table" );
 		stag( "thead" );
