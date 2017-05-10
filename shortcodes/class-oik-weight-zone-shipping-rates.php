@@ -92,12 +92,38 @@ class OIK_Weight_Zone_Shipping_Rates {
 		bw_tablerow( array( "Max weight", "Cost" ,"Method title" ), "tr", "th" );
 		etag( "thead" );
 		foreach ( $rates as $rate ) {
+			bw_trace2( $rate, "rate -3/4?", false );
+			$rate = $this->format_rate( $rate );
 			bw_tablerow( $rate );
 		}
 		etag( "table" );
 		
 	}
 	
+	/**
+	 * Format rate fields for front-end display
+	 *
+	 * @param array $rate
+	 * @return array formatted rates
+	 */
+	function format_rate( $rate ) {
+		if ( isset( $rate[0] ) ) {
+			$rate[0] = wc_format_localized_decimal( $rate[0] );
+		} else {
+			$rate[0] = __( "Missing value for weight", "oik-wzs-rates" );
+		}
+		if ( isset( $rate[1] ) ) {
+			if ( is_numeric( $rate[1] ) ) {
+				$rate[1] = wc_price( $rate[1] );
+			} else {
+				// Leave as is!
+			}
+		} else {
+			$rate[1] = __( "Missing value for rate", "oik-wzs-rates" );
+		}
+			
+		return $rate;
+	}
 	
 	/**
 	 * Load the shipping zones

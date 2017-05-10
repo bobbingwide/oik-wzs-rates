@@ -13,10 +13,10 @@ function oik_wzs_rates( $atts=null, $content=null, $tag=null ) {
 			} else {	
 				//e( "Not done woocommerce_shipping_init yet" );
 				do_action( "woocommerce_shipping_init" );
-				require_once( dirname( __FILE__ ) . "/class-oik-weight-zone-shipping-rates.php" );
-				$oik_wzs_rates = new OIK_Weight_Zone_Shipping_Rates( $atts, $content, $tag );
-				$oik_wzs_rates->rates();
 			}
+			require_once( dirname( __FILE__ ) . "/class-oik-weight-zone-shipping-rates.php" );
+			$oik_wzs_rates = new OIK_Weight_Zone_Shipping_Rates( $atts, $content, $tag );
+			$oik_wzs_rates->rates();
 		} else {
 			e( "[rates] shortcode not available for current version of WooCommerce" );
 		}	
