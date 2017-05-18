@@ -1,10 +1,10 @@
 === oik-wzs-rates ===
 Contributors: bobbingwide
-Donate link: http://www.oik-plugins.com/oik/oik-donate/
+Donate link: https://www.oik-plugins.com/oik/oik-donate/
 Tags: rates, shortcode, WooCommerce, weight zone shipping
 Requires at least: 4.7.2
-Tested up to: 4.7.2
-Stable tag: 0.0.0
+Tested up to: 4.7.5
+Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,10 +30,16 @@ tbc
 1. [rates] shortcode output
 
 == Upgrade Notice ==
+= 0.0.1 = 
+Updated to support changes to oik-weight-zone-shipping v0.1.0 and oik-weight-zone-shipping-pro v0.2.0
+
 = 0.0.0 = 
 For use on oik Weight Zone Shipping demo sites on oik-plugins.eu
 
 == Changelog == 
+= 0.0.1 = 
+* Changed: In line with changes to oik-weight-zone-shipping and oik-weight-zone-shipping-pro
+* Tested: With WordPress 4.7.5, WooCommerce 3.0 and PHP 7.1
 = 0.0.0 =
 * Added: New plugin
 
