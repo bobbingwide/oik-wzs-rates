@@ -116,10 +116,14 @@ class OIK_Weight_Zone_Shipping_Rates {
 			if ( is_numeric( $rate[1] ) ) {
 				$rate[1] = wc_price( $rate[1] );
 			} else {
-				// Leave as is!
+				$rate[1] = stripslashes( $rate[1] );
 			}
 		} else {
 			$rate[1] = __( "Missing value for rate", "oik-wzs-rates" );
+		}
+		
+		if ( isset( $rate[2] ) ) {
+			$rate[2] = stripslashes( $rate[2] );
 		}
 			
 		return $rate;
